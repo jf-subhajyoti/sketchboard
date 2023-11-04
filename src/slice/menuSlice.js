@@ -14,7 +14,7 @@ const menuSlice = createSlice({
             state.activeMenuItem = action.payload;
         },
         actionItemClicked: (state, action) => {
-            state.actionItemClicked = action.payload;
+            state.activeActionItems = action.payload;
         },
     }
 });
