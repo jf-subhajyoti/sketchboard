@@ -9,8 +9,8 @@ import styles from './index.module.css';
 const Toolbox = () => {
     const dispatch = useDispatch();
     const { activeMenuItem } = useSelector(state => state.menu);
-    const { color } = useSelector(state => state.toolbox[activeMenuItem])
-    
+    const { color, size } = useSelector(state => state.toolbox[activeMenuItem])
+
     const showStrokeToolOption = activeMenuItem === MENU_ITEMS.PENCIL;
     const showBrushToolOption = (activeMenuItem === MENU_ITEMS.PENCIL || activeMenuItem === MENU_ITEMS.ERASER);
 
@@ -49,7 +49,7 @@ const Toolbox = () => {
                 <div className={styles.toolItem}>
                     <h4 className={styles.toolText}>Brush Size</h4>
                     <div className={styles.itemContainer}>
-                        <input type='range' min={1} max={10} step={1} onChange={updateSize} />
+                        <input type='range' min={1} max={10} step={1} onChange={updateSize} value={size} />
                     </div>
                 </div>
             }
